@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AristidevsLiveTareas</string>
+    <string name="todo_title">Bienvenido, Oscar</string>
+    <string name="todo_categorias">categorias</string>
+</resources>
