@@ -2,4 +2,16 @@
     <string name="app_name">AristidevsLiveTareas</string>
     <string name="todo_title">Bienvenido, Oscar</string>
     <string name="todo_categorias">categorias</string>
+    <string name="todo_tareas">Tareas</string>
+
+    <string name="todo_dialog_add_task">Añade la Tarea</string>
+    <string name="todo_dialog_category_business">Negocios</string>
+    <string name="todo_dialog_category_other">Otros</string>
+    <string name="todo_dialog_category_personal">Personal</string>
+
+    <string name="todo_dialog_add_task_button">Crear tarea</string>
+
+
+
+
 </resources>

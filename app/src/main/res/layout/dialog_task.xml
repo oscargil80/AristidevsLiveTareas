@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="250dp"
+    android:padding="16dp"
+    android:background="@color/background_todo_app"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/etTask"
+        android:backgroundTint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/todo_dialog_add_task"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+
+    <RadioGroup
+        android:id="@+id/rgCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbBusiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/todo_dialog_category_business"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:buttonTint="@color/business_category" />
+
+        <RadioButton
+            android:id="@+id/rbPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/todo_dialog_category_personal"
+            android:textColor="@color/white"
+            android:buttonTint="@color/personal_category" />
+
+        <RadioButton
+            android:id="@+id/rbOthers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/todo_dialog_category_other"
+            android:textColor="@color/white"
+            android:buttonTint="@color/other_category" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/accent"
+        android:text="@string/todo_dialog_add_task_button"
+        />
+
+
+</LinearLayout>
