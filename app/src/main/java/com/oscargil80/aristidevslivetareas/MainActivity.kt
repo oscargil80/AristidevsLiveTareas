@@ -14,6 +14,8 @@ import com.oscargil80.aristidevslivetareas.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+    //OSCARRRRRRRRRRRRRRRRR
+
     private val categories = listOf(
         TaskCategory.Business,
         TaskCategory.Personal,
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         val rgCategory:RadioGroup = dialog.findViewById(R.id.rgCategory)
 
         btnAddTask.setOnClickListener {
-    val currentTask = etTask.text.toString()
+           val currentTask = etTask.text.toString()
             if(currentTask.isNotEmpty()){
                 val seletedId = rgCategory.checkedRadioButtonId
                 val selectedRadioButton:RadioButton = rgCategory.findViewById(seletedId)
