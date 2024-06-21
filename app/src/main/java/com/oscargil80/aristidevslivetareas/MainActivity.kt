@@ -10,6 +10,7 @@ import android.widget.RadioGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.oscargil80.aristidevslivetareas.databinding.ActivityMainBinding
+import java.text.FieldPosition
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -83,13 +84,17 @@ class MainActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.rvCategories.adapter = categoriesAdapter
 
-        taskAdapter = TasksAdapter(tasks )
+        taskAdapter = TasksAdapter(tasks) { position -> onItemSelected(position) }
         binding.rvTasks.layoutManager =
             LinearLayoutManager(this) // No hay que poner vertical porque  viene por defecto
         binding.rvTasks.adapter = taskAdapter
-
-
     }
+
+    private fun onItemSelected(position: Int){
+        tasks[position].isSelected = !tasks[position].isSelected
+        updateTasks()
+    }
+
 }
 
 
