@@ -74,12 +74,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateTasks() {
+        val selectedCategories:List<TaskCategory> = categories.filter { it.isSelected }
+        val newtask = tasks.filter { selectedCategories.contains(it.category) }
+        taskAdapter.task = newtask
+
         taskAdapter.notifyDataSetChanged()
     }
 
 
     private fun initUI() {
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories) {position -> updateCategories(position)}
         binding.rvCategories.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.rvCategories.adapter = categoriesAdapter
@@ -88,6 +92,12 @@ class MainActivity : AppCompatActivity() {
         binding.rvTasks.layoutManager =
             LinearLayoutManager(this) // No hay que poner vertical porque  viene por defecto
         binding.rvTasks.adapter = taskAdapter
+    }
+
+    private fun updateCategories(position: Int){
+        categories[position].isSelected =!categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateTasks()
     }
 
     private fun onItemSelected(position: Int){
